@@ -23,6 +23,7 @@ const ApprovedList = () => {
       br="0.4rem"
       bg="accent3"
       direction="column"
+      data-testid="approved-list-body"
       width={{ sm: "100%", md: "100%", lg: "60%" }}
       height={{ sm: "auto", md: "auto", lg: "100%" }}
     >
@@ -48,23 +49,24 @@ const ApprovedList = () => {
           m="0 0.2rem 0 0"
           fontSize="0.5rem"
           onClick={removeAllAccepted}
-          disabled={state?.accepted?.length < 1}
+          disabled={state?.accepted ? state.accepted.length < 1 : true}
+          data-testid="delete-all-btn"
         >
           <Flex align="center">
             <AiOutlineDelete size="0.8rem" />
             <Flex p="0.1rem" />
-            Delete all
+            DELETE ALL
           </Flex>
         </Button>
       </Flex>
 
       {state?.accepted && (
-        <Flex wrap width="100%" height="100%">
+        <Flex wrap="wrap" width="100%" height="100%">
           {state.accepted.length > 0 ? (
-            state.accepted.map((item) => (
+            state.accepted.map((item, idx) => (
               <Flex
                 width={{ sm: "50%", md: "50%", lg: "33.3%" }}
-                key={item?.id}
+                key={item?.id + idx}
                 pos="relative"
               >
                 <Button

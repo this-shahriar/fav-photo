@@ -27,6 +27,7 @@ const AddNew = () => {
       bg="bg"
       pos="relative"
       direction="column"
+      data-testid="add-new-body"
       width={{ sm: "100%", md: "100%", lg: "40%" }}
       height={{ sm: "100%", md: "100%", lg: "100%" }}
       boxShadow="rgba(0, 0, 0, 0.08) 0px 4px 12px"
@@ -46,7 +47,12 @@ const AddNew = () => {
         </Button>
       )}
       {current?.url ? (
-        <Image height="100%" width="100%" src={current?.url} />
+        <Image
+          width="100%"
+          height="100%"
+          src={current?.url}
+          data-testid="current-random-image"
+        />
       ) : (
         <Rotate align="center" justify="center" height="100%" width="100%">
           <AiOutlineLoading3Quarters />

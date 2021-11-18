@@ -6,11 +6,11 @@ export const Flex = styled.div`
   position: ${({ pos }) => pos};
   border-radius: ${({ br }) => br};
   border: ${({ border }) => border};
+  flex-wrap: ${({ wrap }) => wrap};
   overflow: ${({ overflow }) => overflow};
   margin: ${({ m }) => (m.lg ? m.lg : m)};
   padding: ${({ p }) => (p.lg ? p.lg : p)};
   box-shadow: ${({ boxShadow }) => boxShadow};
-  flex-wrap: ${({ wrap }) => (wrap ? "wrap" : "")};
   width: ${({ width }) => (width.lg ? width.lg : width)};
   height: ${({ height }) => (height.lg ? height.lg : height)};
   align-items: ${({ align }) => (align.lg ? align.lg : align)};
@@ -51,6 +51,7 @@ Flex.defaultProps = {
   height: "auto",
   delBtnId: "-1",
   border: "none",
+  wrap: "initial",
   overflow: "auto",
   direction: "row",
   boxShadow: "none",
