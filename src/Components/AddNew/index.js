@@ -18,7 +18,7 @@ const AddNew = () => {
   );
 
   useEffect(() => {
-    if (!current) getNewImage(rejected);
+    if (current?.length < 1) getNewImage(rejected);
   }, []);
 
   return (
