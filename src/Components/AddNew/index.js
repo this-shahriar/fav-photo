@@ -18,7 +18,7 @@ const AddNew = () => {
   );
 
   useEffect(() => {
-    if (current?.length < 1) getNewImage(rejected);
+    if (!current?.url) getNewImage(rejected);
   }, []);
 
   return (
