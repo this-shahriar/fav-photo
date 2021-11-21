@@ -49,12 +49,17 @@ const AddNew = () => {
       {current?.url ? (
         <Image
           width="100%"
-          height="100%"
+          height={{ sm: "55vh", md: "55vh", lg: "100%" }}
           src={current?.url}
           data-testid="current-random-image"
         />
       ) : (
-        <Rotate align="center" justify="center" height="100%" width="100%">
+        <Rotate
+          width="100%"
+          align="center"
+          justify="center"
+          height={{ sm: "55vh", md: "55vh", lg: "100%" }}
+        >
           <AiOutlineLoading3Quarters />
         </Rotate>
       )}

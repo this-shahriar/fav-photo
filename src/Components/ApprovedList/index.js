@@ -98,7 +98,7 @@ const ApprovedList = () => {
               direction="column"
             >
               <IoImagesOutline fontSize="1.8rem" color={colors.accent2} />
-              <Flex width="14rem">
+              <Flex width="100%" justify="center">
                 <Text p="0.5rem" size="0.6rem" align="center">
                   No image is accepted yet. Accept images to see them here as a
                   collection.
